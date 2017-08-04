@@ -20,21 +20,24 @@
     </section>
 
     <script>
-    var firstQuestion, secondQuestion, thirdQuestion;
+    var firstQuestion, secondQuestion, thirdQuestion, fourthQuestion;
 
-    firstQuestion = prompt("Do I live in Portland, Yes or No? ", "");
+      firstQuestion = prompt("Do I live in Portland, Yes or No? ", "");
       console.log("Portland answer is " + firstQuestion);
       if (firstQuestion == "Yes" || firstQuestion == "yes") {
 
           alert("Correct");
         }
+
         else {
+
         alert ("I do live in Portland, Try again");
       }
 
       secondQuestion = prompt("Is green my favorite color?");
         console.log("Question two answer is " + secondQuestion);
-      if (secondQuestion == "No" || secondQuestion == "no") {
+
+      if (secondQuestion == "No" || secondQuestion == "no" || secondQuestion == "blue" || secondQuestion == "Blue") {
         alert("Correct! My favorite color is Blue!");
 
       }
@@ -51,6 +54,34 @@
           else{
             alert("It's actually True! I've treked the Ansel Adams wilderness and witnessed Old Faithful");
           }
+
+        fourthQuestion = prompt("How many animals do I currently own? Give me a number");
+            console.log("Fourth Questions answer is " + fourthQuestion);
+
+        if (fourthQuestion == 3 || fourthQuestion == "three") {
+            alert("That's exactly right! I have one dog and two cats");
+          }
+
+           else if (fourthQuestion < 3) {
+              alert("getting warmer, but It's alittle higher");
+            }
+
+            else if (fourthQuestion > 3 && fourthQuestion < 10 ) {
+              alert("A little lower than that. but close");
+            }
+
+            else {
+              alert("Definitely lower, I'm not a hoarder");
+
+            }
+
+
+
+
+
+
+
+
       </script>
 
 
