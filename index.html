@@ -8,10 +8,15 @@
   </head>
 
   <body>
+    <!-- seperating header into classes to better edit them in CSS file-->
     <section class = "intro">
       <div class="inner">
         <div class="content">
           <h1>The More You Know!</h1>
+
+          <!-- Making a button that can be edited in CSS,
+          adding action of OnClick to refresh page-->
+
           <a class = "btn" href="#" onClick="window.location.reload()">Retake the Quiz</a>
 
         </div>
@@ -20,6 +25,7 @@
     </section>
 
     <script>
+    /* Declaring variables in shorthand to use for four different questions*/
     var firstQuestion, secondQuestion, thirdQuestion, fourthQuestion;
 
       firstQuestion = prompt("Do I live in Portland, Yes or No? ", "");
