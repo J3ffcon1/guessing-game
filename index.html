@@ -68,7 +68,7 @@
             alert("It's actually True! I've treked the Ansel Adams wilderness and witnessed Old Faithful");
             incorrectAnswers++;
             }
-
+      while(fourthQuestion != 3) {
       fourthQuestion = prompt("How many animals do I currently own? Give me a number");
       console.log("Fourth Questions answer is " + fourthQuestion);
         if (fourthQuestion == 3 || fourthQuestion == "three") {
@@ -91,7 +91,7 @@
               alert("Definitely lower, I'm not a hoarder");
               incorrectAnswers++;
               }
-
+            }// while(fourthQuestion != 3)
 
 
 /*fourthQuestion = prompt("How many animals do I currently own? Give me a number");
@@ -121,8 +121,7 @@
 
 
 
- alert("You got: "+ correctAnswers + " correct");
- alert("You got: " + incorrectAnswers + " wrong");
+ alert("You got: "+ correctAnswers + " correct \n You got: " + incorrectAnswers + " wrong");
 
 
 
