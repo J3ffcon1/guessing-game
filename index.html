@@ -25,7 +25,6 @@
     </section>
 
     <script>
-    /* Declaring variables in shorthand to use for four different questions*/
     var firstQuestion, secondQuestion, thirdQuestion, fourthQuestion;
 
       firstQuestion = prompt("Do I live in Portland, Yes or No? ", "");
@@ -61,7 +60,7 @@
             alert("It's actually True! I've treked the Ansel Adams wilderness and witnessed Old Faithful");
           }
 
-        fourthQuestion = prompt("How many animals do I currently own? Give me a number");
+/*        fourthQuestion = prompt("How many animals do I currently own? Give me a number");
             console.log("Fourth Questions answer is " + fourthQuestion);
 
         if (fourthQuestion == 3 || fourthQuestion == "three") {
@@ -79,8 +78,21 @@
             else {
               alert("Definitely lower, I'm not a hoarder");
 
-            }
+            }*/
+fourthQuestion = prompt("How many animals do I currently own? Give me a number");
+  console.log("fourth Questions answer is " + fourthQuestion);
 
+    while(true) {
+        fourthQuestion = prompt("How many animals do I currently own? Give me a number");
+        if (fourthQuestion == 3) {
+          break;
+        }
+          alert("try again");
+    }
+            alert("correct I have one dog and two cats!");
+
+
+    
 
 
 
