@@ -25,78 +25,104 @@
     </section>
 
     <script>
-    var firstQuestion, secondQuestion, thirdQuestion, fourthQuestion;
+    var firstQuestion, secondQuestion, thirdQuestion, fourthQuestion, fifthQuestion;
+    var incorrectAnswers = 0;
+    var correctAnswers = 0;
 
-      firstQuestion = prompt("Do I live in Portland, Yes or No? ", "");
-      console.log("Portland answer is " + firstQuestion);
+    firstQuestion = prompt("Do I live in Portland, Yes or No? ", "");
+    console.log("Portland answer is " + firstQuestion);
       if (firstQuestion == "Yes" || firstQuestion == "yes") {
 
           alert("Correct");
+          correctAnswers++;
         }
 
         else {
 
         alert ("I do live in Portland, Try again");
-      }
+        incorrectAnswers++;
+        }
 
-      secondQuestion = prompt("Is green my favorite color?");
-        console.log("Question two answer is " + secondQuestion);
+    secondQuestion = prompt("Is green my favorite color?");
+    console.log("Question two answer is " + secondQuestion);
 
       if (secondQuestion == "No" || secondQuestion == "no" || secondQuestion == "blue" || secondQuestion == "Blue") {
         alert("Correct! My favorite color is Blue!");
+        correctAnswers++;
+        }
 
-      }
         else {
         alert("Nope! My favorite color is Blue! Try again");
-      }
+        incorrectAnswers++;
+        }
 
-      thirdQuestion = prompt("True or False, I've been to both Yosemite and Yellowstone National Park");
-        console.log("Third question answer is " + thirdQuestion);
+     thirdQuestion = prompt("True or False, I've been to both Yosemite and Yellowstone National Park");
+     console.log("Third question answer is " + thirdQuestion);
 
         if(thirdQuestion == "True" || thirdQuestion == "true") {
           alert("You got it! I've climbed Half-Dome and have been sniffed by Buffalo.");
-        }
+          correctAnswers++;
+          }
+
           else{
             alert("It's actually True! I've treked the Ansel Adams wilderness and witnessed Old Faithful");
-          }
+            incorrectAnswers++;
+            }
 
-/*        fourthQuestion = prompt("How many animals do I currently own? Give me a number");
-            console.log("Fourth Questions answer is " + fourthQuestion);
-
+      fourthQuestion = prompt("How many animals do I currently own? Give me a number");
+      console.log("Fourth Questions answer is " + fourthQuestion);
         if (fourthQuestion == 3 || fourthQuestion == "three") {
             alert("That's exactly right! I have one dog and two cats");
-          }
-
-           else if (fourthQuestion < 3) {
-              alert("getting warmer, but It's alittle higher");
+            correctAnswers++;
             }
 
+            else if (fourthQuestion < 3) {
+              alert("getting warmer, but It's alittle higher");
+              incorrectAnswers++;
+              }
+
+            // this results in having the browser move on to the fifth question?
             else if (fourthQuestion > 3 && fourthQuestion < 10 ) {
               alert("A little lower than that. but close");
-            }
+              incorrectAnswers++;
+              }
 
-            else {
+              else {
               alert("Definitely lower, I'm not a hoarder");
+              incorrectAnswers++;
+              }
 
-            }*/
-fourthQuestion = prompt("How many animals do I currently own? Give me a number");
+
+
+/*fourthQuestion = prompt("How many animals do I currently own? Give me a number");
   console.log("fourth Questions answer is " + fourthQuestion);
 
-    while(true) {
-        fourthQuestion = prompt("How many animals do I currently own? Give me a number");
-        if (fourthQuestion == 3) {
-          break;
-        }
-          alert("try again");
+    while(fourthQuestion != 3) {
+      alert("try again");
+
+      fourthQuestion = prompt("How many animals do I currently own? Give me a number");
+
     }
             alert("correct I have one dog and two cats!");
+  */
 
 
-    
+  fifthQuestion = prompt("I'am thinking of a number between 1 and 10, What is it?");
+  console.log("fifth question answer is " + fifthQuestion);
+
+    while(fifthQuestion != 5) {
+      alert("try again");
+      incorrectAnswers++;
+      fifthQuestion = prompt("I'am thinking of a number between 1 and 10, What is it?");
+
+      }
+      alert("How did you know? Get out of my Brain!!!");
+      correctAnswers++;
 
 
 
-
+ alert("You got: "+ correctAnswers + " correct");
+ alert("You got: " + incorrectAnswers + " wrong");
 
 
 
