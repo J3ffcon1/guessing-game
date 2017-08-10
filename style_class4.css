@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Raleway');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#answer-section1, #answer-section2,#answer-section3,#answer-section4,#answer-section5, #answer-section6, #answer-section7 {
+  font-family: 'Oswald', sans-serif;
+  color: #9BB5CF;
+  font-size: 100%;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+}
+
+
+.intro {
+  height:100%;
+  width: 100%;
+  margin: auto;
+  background-image: url('http://i.huffpost.com/gen/1685887/images/o-YELLOWSTONE-BISON-facebook.jpg');
+  display: table;
+  top: 0;
+  background-size: cover;
+}
+
+.intro .inner {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  max-width: none;
+}
+
+.content {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+h1{
+  font-family: 'Raleway', sans-serif;
+  color: #F9F3F4;
+  opacity: 0.6;
+  text-shadow: 0px 0px 300px #000;
+  font-size: 500%;
+}
+
+.btn {
+  border-radius: 9px;
+  font-family: 'Oswald', sans-serif;
+  color: #9BB5CF;
+  font-size: 135%;
+  padding: 10px 20px;
+  border: solid #9BB5CF 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn:hover {
+  color: #F9F3F4;
+  border: solid #F9F3F4 3px;
+
+}
+
+@media screen and (max-width: 768px) {
+  .content h1 {
+    font-size: 250%;
+}
+    .btn{
+      font-size: 110%;
+      padding: 7px 15px;
+    }
+
+  }
+
+}
