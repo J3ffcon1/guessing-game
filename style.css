@@ -7,11 +7,22 @@ html, body {
     width: 100%;
 }
 
+#answer-section1, #answer-section2,#answer-section3,#answer-section4,#answer-section5, #answer-section6, #answer-section7 {
+  font-family: 'Oswald', sans-serif;
+  color: #9BB5CF;
+  font-size: 100%;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+}
+
+
 .intro {
   height:100%;
   width: 100%;
   margin: auto;
-  background-image: url('https://static.pexels.com/photos/415368/pexels-photo-415368.jpeg');
+  background-image: url('http://i.huffpost.com/gen/1685887/images/o-YELLOWSTONE-BISON-facebook.jpg');
   display: table;
   top: 0;
   background-size: cover;
