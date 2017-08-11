@@ -81,7 +81,7 @@
               }
               el.innerHTML += message;
             }// while(fourthQuestion != 3)
-      
+
 
 
 /*fourthQuestion = prompt("How many animals do I currently own? Give me a number");
