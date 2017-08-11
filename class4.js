@@ -4,23 +4,36 @@
     var correctAnswers = 0;
     var message;
 
-    function guessingGame(){
-      firstQuestion(); secondQuestion(); thirdQuestion(); fourthQuestion();
-      fifthQuestion(); sixthQuestion(); correctCounter();
+    function Welcome() {
+      message = "Welcome to my guessing game page.<br> My name is Jeff and My game consists of trivia questions about me!<br> click the guessing game button to begin!"
+      var el = document.getElementById('welcome-button-message');
+      el.innerHTML = message;
     }
+
+    function guessingGame(){
+      var el = document.getElementById('welcome-button-message');
+      el.innerHTML = "";
+
+      firstQuestion(); secondQuestion(); thirdQuestion(); fourthQuestion();
+      fifthQuestion(); sixthQuestion(); star(); correctCounter();
+    }
+
+    function abc() {
+    location.reload();
+  }
 
     function firstQuestion() {
     firstQuestion = prompt("Do I live in Portland, Yes or No? ", "");
     console.log("Portland answer is " + firstQuestion);
       if (firstQuestion == "Yes" || firstQuestion == "yes") {
 
-          message = "Correct!";
+          message = "Q1: Correct!";
           correctAnswers++;
         }
 
         else {
 
-        message = "I do live in Portland, Try again";
+        message = "Q1: I do live in Portland, Try again";
 
         }
         var el = document.getElementById('answer-section1');
@@ -33,12 +46,12 @@
     console.log("Question two answer is " + secondQuestion);
 
       if (secondQuestion == "No" || secondQuestion == "no" || secondQuestion == "blue" || secondQuestion == "Blue") {
-        message = "Correct! My favorite color is Blue!";
+        message = "Q2: Correct! My favorite color is Blue!";
         correctAnswers++;
         }
 
         else {
-        message = "Nope! My favorite color is Blue! Try again";
+        message = "Q2: Nope! My favorite color is Blue! Try again";
         //incorrectAnswers++;
         }
 
@@ -53,12 +66,12 @@
      console.log("Third question answer is " + thirdQuestion);
 
           if(thirdQuestion == "True" || thirdQuestion == "true") {
-          message = "You got it! I've climbed Half-Dome and have been sniffed by Bison.";
+          message = "Q3: You got it! I've climbed Half-Dome and have been sniffed by Bison.";
           correctAnswers++;
           }
 
           else{
-          message = "It's actually True! I've treked the Ansel Adams wilderness and witnessed Old Faithful";
+          message = "Q3: It's actually True! I've treked the Ansel Adams wilderness and witnessed Old Faithful";
           //incorrectAnswers++;
           }
           var el = document.getElementById('answer-section3');
@@ -72,11 +85,11 @@
       console.log("Fourth Questions answer is " + fourthQuestion);
            if (fourthQuestion == 3 || fourthQuestion == "three") {
 
-           message = "That's exactly right! I have one dog and two cats";
+           message = "Q4: That's exactly right! I have one dog and two cats";
            correctAnswers++;
            }
            else {
-            message = "No I do not own that many animals";
+            message = "Q4: No I do not own that many animals";
               //incorrectAnswers++;
               }
               el.innerHTML += message;
@@ -100,11 +113,11 @@
         fifthQuestion = prompt("I'am thinking of a number between 1 and 10, What is it?");
         console.log("fifth question answer is " + fifthQuestion);
           if (fifthQuestion == 5) {
-            message = "You got it right! the answer is 5!";
+            message = "Q5: You got it right! the answer is 5!";
             correctAnswers++;
           }
           else {
-            message = "No That was not the number I was thinking of"
+            message = "Q5: No That was not the number I was thinking of"
           }
 
 
@@ -152,12 +165,12 @@
       console.log (sixthAnswers[i]);
       console.log (i);
       if (sixthQuestion === sixthAnswers[i]) {
-      message = "Correct! I have been to " + sixthAnswers[i];
+      message = "Q6: Correct! I have been to " + sixthAnswers[i];
       correctAnswers++;
       break;
       }
      else {
-     message = "No, I haven't been there...yet";
+     message = "Q6: No, I haven't been there...yet";
       }
     }
      var el = document.getElementById('answer-section6');
@@ -167,7 +180,11 @@
 
 
 
-
+function star(){
+  message = "The More You Know!"
+  var el = document.getElementById('Star');
+  el.innerHTML+= message;
+}
 
 function correctCounter() {
  message = "You got: "+ correctAnswers + " correct \n Out of 6 Questions!"

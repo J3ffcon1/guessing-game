@@ -9,12 +9,11 @@ html, body {
 
 #answer-section1, #answer-section2,#answer-section3,#answer-section4,#answer-section5, #answer-section6, #answer-section7 {
   font-family: 'Oswald', sans-serif;
-  color: #9BB5CF;
-  font-size: 100%;
+  color: #8F6C50;
+  font-size: 120%;
   padding: 10px 20px;
   text-transform: uppercase;
   text-decoration: none;
-
 }
 
 
@@ -22,10 +21,11 @@ html, body {
   height:100%;
   width: 100%;
   margin: auto;
-  background-image: url('http://i.huffpost.com/gen/1685887/images/o-YELLOWSTONE-BISON-facebook.jpg');
+  background-image: url('https://i.amz.mshcdn.com/6pABFNVs7PnvtWXZqkaLwpBWMPw=/fit-in/1440x1000/http%3A%2F%2Fmashable.com%2Fwp-content%2Fgallery%2Fbison-hunting-in-montana%2F42-53797326.jpg');
   display: table;
-  top: 0;
+  top: 3;
   background-size: cover;
+
 }
 
 .intro .inner {
@@ -41,22 +41,32 @@ html, body {
   text-align: center;
 
 }
+#Star {
+  color: #00001a;
 
+}
+
+#welcome-button-message {
+  font-family: 'Raleway', sans-serif;
+  color: #00001a;
+  opacity: 1.0;
+
+}
 h1{
   font-family: 'Raleway', sans-serif;
   color: #F9F3F4;
-  opacity: 0.6;
+  opacity: 0.9;
   text-shadow: 0px 0px 300px #000;
-  font-size: 500%;
+  font-size: 400%;
 }
 
 .btn {
   border-radius: 9px;
   font-family: 'Oswald', sans-serif;
-  color: #9BB5CF;
+  color: #8F6C50;
   font-size: 135%;
   padding: 10px 20px;
-  border: solid #9BB5CF 3px;
+  border: solid #8F6C50 3px;
   text-transform: uppercase;
   text-decoration: none;
 }
