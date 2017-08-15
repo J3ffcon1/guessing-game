@@ -1,8 +1,14 @@
 
     var firstQuestion, secondQuestion, thirdQuestion, fourthQuestion, fifthQuestion, sixthQuestion;
+    var askQuestion,  guessingGame,  Welcome, updatePage;
+    var wrongMessage
+    var correctMessage
     var incorrectAnswers = 0;
     var correctAnswers = 0;
+    var score = 0;
     var message;
+    var checkmark = "<img class = 'checkmark' src = \"http://www.clker.com/cliparts/2/k/n/l/C/Q/transparent-green-checkmark-md.png\">"
+    var x_mark = "<img class = 'x_mark' src = \"http://www.caff.org/wp-content/uploads/2016/03/2000px-Xmark01.svg_.png\">"
 
     function Welcome() {
       message = "Welcome to my guessing game page.<br> My name is Jeff and My game consists of trivia questions about me!<br> click the guessing game button to begin!"
@@ -10,184 +16,70 @@
       el.innerHTML = message;
     }
 
-    function guessingGame(){
+
+      function guessingGame(){
       var el = document.getElementById('welcome-button-message');
       el.innerHTML = "";
-
-      firstQuestion(); secondQuestion(); thirdQuestion(); fourthQuestion();
-      fifthQuestion(); sixthQuestion(); star(); correctCounter();
+      askQuestion("Do I live in Portland, Yes or No? ", "yes", checkmark + "<span class = 'correctMessage'>Q1: Correct!</span>",x_mark +"<span class = 'wrongMessage'>Q1: I do live in Portland, Try again</span>", 'answer-section1' );
+      askQuestion("Is green my favorite color?", "no", checkmark + "<span class = 'correctMessage'>Q2: Correct! My favorite color is Blue!</span>" , x_mark +"<span class = 'wrongMessage'>Q2: Nope! My favorite color is Blue! Try again</span>", 'answer-section2' );
+      askQuestion("True or False, I've been to both Yosemite and Yellowstone National Park", "true",  checkmark +"<span class = 'correctMessage'>Q3: You got it! I've climbed Half-Dome and have been sniffed by Bison.</span>", x_mark +"<span class = 'wrongMessage'>Q3: It's actually True! I've treked the Ansel Adams wilderness and witnessed Old Faithful</span>", 'answer-section3' );
+      askQuestion("How many animals do I currently own? Give me a number", "3", checkmark + "<span class =correctMessage> Q4: That's exactly right! I have one dog and two cats</span>",x_mark + "<span class = 'wrongMessage'>Q4: No I do not own that many animals</span>", 'answer-section4' );
+      askQuestion("I'am thinking of a number between 1 and 10, What is it?","5", checkmark +"<span class = 'correctMessage'>Q5: You got it right! the answer is 5!</span>", x_mark + "<span class = 'wrongMessage'>Q5: No That was not the number I was thinking of</span>", 'answer-section5' );
+       sixthQuestion();
+       star();
+       correctCounter();
     }
 
     function abc() {
     location.reload();
   }
 
-    function firstQuestion() {
-    firstQuestion = prompt("Do I live in Portland, Yes or No? ", "");
-    console.log("Portland answer is " + firstQuestion);
-      if (firstQuestion == "Yes" || firstQuestion == "yes") {
+    function updatePage(elementId) {
+      document.getElementById(elementId).innerHTML = message;
+      }
 
-          message = "Q1: Correct!";
-          correctAnswers++;
+      function askQuestion (question, answer, correctMessage, wrongMessage, location){
+
+        var response = prompt(question);
+        if (response.toLowerCase() == answer.toLowerCase()) {
+          message = correctMessage;
+          score += 1
+        }else {
+          message = wrongMessage;
         }
+        updatePage(location);
 
-        else {
+      }
 
-        message = "Q1: I do live in Portland, Try again";
+      function sixthQuestion () {
+        var sixthQuestion = prompt("What countries have I been to? Name any country");
+        var sixthAnswers = ["ireland", "scotland", "usa"];
 
-        }
-        var el = document.getElementById('answer-section1');
-        el.innerHTML += message;
-        //incorrectAnswers++;
-        }
-
-    function secondQuestion() {
-    secondQuestion = prompt("Is green my favorite color?");
-    console.log("Question two answer is " + secondQuestion);
-
-      if (secondQuestion == "No" || secondQuestion == "no" || secondQuestion == "blue" || secondQuestion == "Blue") {
-        message = "Q2: Correct! My favorite color is Blue!";
-        correctAnswers++;
-        }
-
-        else {
-        message = "Q2: Nope! My favorite color is Blue! Try again";
-        //incorrectAnswers++;
-        }
-
-        var el = document.getElementById('answer-section2');
-        el.innerHTML += message;
-
-
-        }
-
-     function thirdQuestion (){
-     thirdQuestion = prompt("True or False, I've been to both Yosemite and Yellowstone National Park");
-     console.log("Third question answer is " + thirdQuestion);
-
-          if(thirdQuestion == "True" || thirdQuestion == "true") {
-          message = "Q3: You got it! I've climbed Half-Dome and have been sniffed by Bison.";
-          correctAnswers++;
-          }
-
-          else{
-          message = "Q3: It's actually True! I've treked the Ansel Adams wilderness and witnessed Old Faithful";
-          //incorrectAnswers++;
-          }
-          var el = document.getElementById('answer-section3');
-          el.innerHTML += message;
-          }
-
-      function fourthQuestion() {
-      var el = document.getElementById('answer-section4');
-
-      fourthQuestion = prompt("How many animals do I currently own? Give me a number");
-      console.log("Fourth Questions answer is " + fourthQuestion);
-           if (fourthQuestion == 3 || fourthQuestion == "three") {
-
-           message = "Q4: That's exactly right! I have one dog and two cats";
-           correctAnswers++;
-           }
-           else {
-            message = "Q4: No I do not own that many animals";
-              //incorrectAnswers++;
-              }
-              el.innerHTML += message;
-            }// while(fourthQuestion != 3)
-
-
-
-/*fourthQuestion = prompt("How many animals do I currently own? Give me a number");
-  console.log("fourth Questions answer is " + fourthQuestion);
-
-    while(fourthQuestion != 3) {
-      alert("try again");
-
-      fourthQuestion = prompt("How many animals do I currently own? Give me a number");
-
-    }
-            alert("correct I have one dog and two cats!");
-  */
-
-      function fifthQuestion() {
-        fifthQuestion = prompt("I'am thinking of a number between 1 and 10, What is it?");
-        console.log("fifth question answer is " + fifthQuestion);
-          if (fifthQuestion == 5) {
-            message = "Q5: You got it right! the answer is 5!";
+        for (var i = 0; i < sixthAnswers.length; i++ ) {
+          console.log (sixthAnswers[i]);
+          console.log (i);
+          if (sixthQuestion === sixthAnswers[i]) {
+            message = checkmark + "<span class = 'correctMessage'>Q6: Correct! I have been to " + sixthAnswers[i]+"</span>";
             correctAnswers++;
+            score += 1;
+            break;
           }
-          else {
-            message = "Q5: No That was not the number I was thinking of"
-          }
+              else {
+                message = x_mark + "<span class = 'wrongMessage'>Q6: No, I haven't been there...yet";
+                }
+                }
+                var el = document.getElementById('answer-section6');
+                el.innerHTML += message;
+              }
 
-
-          var el = document.getElementById('answer-section5');
-          el.innerHTML += message;
-      }
-
-
-
-/*function sixthQuestion() {
-    var sixthQuestion = prompt("What countries have I been to? Name any country", "");
-    if (sixthQuestion.toLowerCase() == "ireland") {
-       message = "Correct I have been to Ireland" }
-      else if (sixthQuestion.toLowerCase() == "scotland") {
-        message = "Correct I have been to Scotland!"
-        }
-        else if (sixthQuestion.toLowerCase() == "united states" || sixthQuestion.toLowerCase() == "usa" ) {
-          message = "Correct I have been to the United States!"
-        }
-          else{
-            message = "No I haven't been there...yet"
-          }
-      var el = document.getElementById('answer-section');
-      el.innerHTML = message;
-    }
-*/
-/*function sixthQuestion() {
-  var sixthQuestion = prompt("What countries have I been to? Name any country");
-  for var sixthQuestion = ["ireland","scotland","usa"] ; {
-    message = "Correct I have been there."
-  }
-  else {
-    message = "No I haven't been there...yet";
-  }
-  var el = document.getElementById('answer-section');
-  el.innerHTML = message;
-}
-*/
-
-  function sixthQuestion () {
-      var sixthQuestion = prompt("What countries have I been to? Name any country");
-      var sixthAnswers = ["ireland", "scotland", "usa"];
-
-      for (var i = 0; i < sixthAnswers.length; i++ ) {
-      console.log (sixthAnswers[i]);
-      console.log (i);
-      if (sixthQuestion === sixthAnswers[i]) {
-      message = "Q6: Correct! I have been to " + sixthAnswers[i];
-      correctAnswers++;
-      break;
-      }
-     else {
-     message = "Q6: No, I haven't been there...yet";
-      }
-    }
-     var el = document.getElementById('answer-section6');
-     el.innerHTML += message;
+    function star(){
+      message = "The More You Know!"
+      var el = document.getElementById('Star');
+      el.innerHTML+= message;
     }
 
-
-
-
-function star(){
-  message = "The More You Know!"
-  var el = document.getElementById('Star');
-  el.innerHTML+= message;
-}
-
-function correctCounter() {
- message = "You got: "+ correctAnswers + " correct \n Out of 6 Questions!"
- var el = document.getElementById('answer-section7');
- el.innerHTML += message;
-}
+    function correctCounter() {
+      message = "<span class = 'correctMessage'>You got: "+ score + " correct \n Out of 6 Questions!</span>"
+      var el = document.getElementById('answer-section7');
+      el.innerHTML += message;
+    }

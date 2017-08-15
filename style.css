@@ -16,6 +16,10 @@ html, body {
   text-decoration: none;
 }
 
+#correctMessage {
+  color: green;
+
+}
 
 .intro {
   height:100%;
@@ -26,6 +30,9 @@ html, body {
   top: 3;
   background-size: cover;
 
+}
+.color {
+  color: green;
 }
 
 .intro .inner {
@@ -75,6 +82,21 @@ h1{
   color: #F9F3F4;
   border: solid #F9F3F4 3px;
 
+}
+.wrongMessage {
+  color: red;
+
+}
+
+.correctMessage {
+  color: green;
+}
+
+.checkmark {
+  width: 20px;
+}
+.x_mark {
+  width: 20px;
 }
 
 @media screen and (max-width: 768px) {
